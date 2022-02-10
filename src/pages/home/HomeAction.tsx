@@ -3,6 +3,7 @@ import useHomeActionStyles from './HomeAction.styles';
 
 export type HomeActionProps = {
   img: string;
+  onHomeActionClicked: () => void;
   title: string;
   width: string;
 };
@@ -10,9 +11,19 @@ export type HomeActionProps = {
 function HomeAction(props: HomeActionProps) {
   const classes = useHomeActionStyles(props);
 
+  const onActionPaperClicked = (): void => {
+    // Do internal operations
+    props.onHomeActionClicked();
+  };
+
   return (
     <Grow in timeout={750}>
-      <Paper className={classes.actionPaper} square elevation={1}>
+      <Paper
+        className={classes.actionPaper}
+        onClick={onActionPaperClicked}
+        square
+        elevation={1}
+      >
         <Typography align="center" variant="h5">
           {props.title}
         </Typography>
