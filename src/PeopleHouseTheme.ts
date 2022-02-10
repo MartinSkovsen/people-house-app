@@ -1,4 +1,4 @@
-﻿import { createMuiTheme } from '@material-ui/core';
+﻿import { alpha, createTheme } from '@material-ui/core/styles';
 
 const belowThisBreakpointIsMobile: number | 'xs' | 'sm' | 'md' | 'lg' | 'xl' =
   'sm';
@@ -13,16 +13,17 @@ const legoGreen = '#1D5A52';
 const legoLightGreen = '#C7D599';
 const legoWhite = '#FFFFFF';
 const legoYellow = '#FAED00';
+const legoDarkerYellow = '#FFCF00';
 
-const peopleHouseTheme = createMuiTheme({
+const peopleHouseTheme = createTheme({
   palette: {
     text: {
       primary: legoBlack,
       secondary: legoGrey,
     },
     background: {
-      default: legoYellow,
-      paper: legoWhite,
+      default: legoDarkerYellow,
+      paper: alpha(legoWhite, 0.5),
     },
     primary: {
       light: legoLightGreen,
@@ -33,7 +34,9 @@ const peopleHouseTheme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: ['"Open Sans"'].join(','),
+    allVariants: {
+      fontFamily: ["'Cera Pro'"].join(','),
+    },
   },
   overrides: {},
 });
