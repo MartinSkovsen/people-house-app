@@ -19,7 +19,9 @@ function MainBar(props: MainBarProps) {
       {isOnSmallScreen && <div>smol ;) screen</div>}
       <MainBarContentWrapper>
         <div style={{ display: 'flex', width: '100%' }}>
-          <Typography variant="h4">People House</Typography>
+          <a href="/">
+            <Typography variant="h4">People House</Typography>
+          </a>
         </div>
         <AccountMenu user={props.user} />
       </MainBarContentWrapper>
