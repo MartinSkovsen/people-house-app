@@ -7,8 +7,12 @@ const useMainStyles = makeStyles((theme: Theme) =>
       width: '100%',
     },
     content: {
-      padding: theme.spacing(4),
       backgroundColor: theme.palette.background.paper,
+      display: 'flex',
+      alignItems: 'center',
+      margin: '0px auto',
+      width: '100%',
+      maxWidth: '100rem',
     },
   })
 );
