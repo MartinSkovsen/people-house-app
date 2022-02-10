@@ -1,6 +1,6 @@
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
-const useMainBarWrapperStyles = makeStyles((theme: Theme) =>
+const useMainBarContentWrapperStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
@@ -13,4 +13,4 @@ const useMainBarWrapperStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default useMainBarWrapperStyles;
+export default useMainBarContentWrapperStyles;

@@ -1,8 +1,10 @@
+import { Typography } from '@material-ui/core';
 import React from 'react';
 import useIsOnSmallScreen from '../../common/hooks/useIsOnSmallScreen';
 import { ApplicationUser } from '../users/Users.types';
+import AccountMenu from './AccountMenu';
 import useTopMenuStyles from './MainBar.styles';
-import MainBarWrapper from './MainBarWrapper';
+import MainBarContentWrapper from './MainBarContentWrapper';
 
 export type MainBarProps = {
   user: ApplicationUser;
@@ -15,7 +17,12 @@ function MainBar(props: MainBarProps) {
   return (
     <div className={classes.root}>
       {isOnSmallScreen && <div>smol ;) screen</div>}
-      <MainBarWrapper title="People House" user={props.user} />
+      <MainBarContentWrapper>
+        <div style={{ display: 'flex', width: '100%' }}>
+          <Typography variant="h4">People House</Typography>
+        </div>
+        <AccountMenu user={props.user} />
+      </MainBarContentWrapper>
     </div>
   );
 }
