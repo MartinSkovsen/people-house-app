@@ -1,4 +1,5 @@
 import { Grid } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import facilityData from './facility-data.jpg';
 import useHomeStyles from './Home.styles';
 import HomeAction from './HomeAction';
@@ -7,9 +8,10 @@ const homeActionWidth = '15rem';
 
 function Home() {
   const classes = useHomeStyles();
+  const history = useHistory();
 
-  const openLinkInWindow = (link: string): void => {
-    window.open(link, '_self');
+  const redirect = (link: string): void => {
+    history.push(`${link}`);
   };
 
   return (
@@ -23,7 +25,7 @@ function Home() {
       <Grid item sm={2}>
         <HomeAction
           img={facilityData}
-          onHomeActionClicked={() => openLinkInWindow('facility-data')}
+          onHomeActionClicked={() => redirect('facility-data')}
           title="Data"
           width={homeActionWidth}
         />
