@@ -3,7 +3,8 @@ import useHomeActionStyles from './HomeAction.styles';
 
 export type HomeActionProps = {
   img: string;
-  onHomeActionClicked: () => void;
+  onHomeActionClicked: () => void; // We want this imperative. Redirecting is not the responsibility of HomeAction.
+  // We could also wrap HomeAction with another component responsible for redirecting.
   title: string;
   width: string;
 };
