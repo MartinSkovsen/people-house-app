@@ -47,6 +47,9 @@ function Main(props: MainProps) {
           <Route path="/facility-data">
             <FacilityData />
           </Route>
+          <Route path="/events">
+            <FacilityData />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
