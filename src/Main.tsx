@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { UserSession } from './core/auth/auth.types';
 import MainBar from './core/main-bar/MainBar';
 import useMainStyles from './Main.styles';
+import FacilityData from './pages/facility-data/FacilityData';
 import Home from './pages/home/Home';
 
 type MainProps = {
@@ -17,6 +18,9 @@ function Main(props: MainProps) {
       <MainBar user={props.userSession.user} />
       <div className={classes.content}>
         <Switch>
+          <Route path="/facility-data">
+            <FacilityData />
+          </Route>
           <Route path="/">
             <Home />
           </Route>

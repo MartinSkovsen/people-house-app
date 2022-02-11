@@ -1,5 +1,6 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import useIsOnSmallScreen from '../../common/hooks/useIsOnSmallScreen';
 import { ApplicationUser } from '../users/Users.types';
 import AccountMenu from './AccountMenu';
@@ -19,7 +20,9 @@ function MainBar(props: MainBarProps) {
       {isOnSmallScreen && <div>smol ;) screen</div>}
       <MainBarContentWrapper>
         <div style={{ display: 'flex', width: '100%' }}>
-          <Typography variant="h4">People House</Typography>
+          <NavLink exact to="/">
+            <Typography variant="h4">People House</Typography>
+          </NavLink>
         </div>
         <AccountMenu user={props.user} />
       </MainBarContentWrapper>

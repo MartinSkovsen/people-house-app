@@ -3,7 +3,7 @@
 const useMainStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      minHeight: '100vh',
+      minHeight: '75vh',
       width: '100%',
     },
     content: {
@@ -13,6 +13,7 @@ const useMainStyles = makeStyles((theme: Theme) =>
       margin: '0px auto',
       width: '100%',
       maxWidth: '100rem',
+      height: '100%',
     },
   })
 );
