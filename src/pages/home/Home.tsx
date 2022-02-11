@@ -1,5 +1,6 @@
 import { Grid } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+import events from './events.png';
 import facilityData from './facility-data.jpg';
 import useHomeStyles from './Home.styles';
 import HomeAction from './HomeAction';
@@ -30,14 +31,14 @@ function Home() {
           width={homeActionWidth}
         />
       </Grid>
-      {/* <Grid item sm={2}> */}
-      {/*  <HomeAction */}
-      {/*    img={events} */}
-      {/*    onHomeActionClicked={() => openLinkInWindow('events')} */}
-      {/*    title="Events" */}
-      {/*    width={homeActionWidth} */}
-      {/*  /> */}
-      {/* </Grid> */}
+      <Grid item sm={2}>
+        <HomeAction
+          img={events}
+          onHomeActionClicked={() => redirect('events')}
+          title="Events"
+          width={homeActionWidth}
+        />
+      </Grid>
       {/* <Grid item sm={2}> */}
       {/*  <HomeAction */}
       {/*    img={family} */}
