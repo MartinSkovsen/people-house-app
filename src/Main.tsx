@@ -1,5 +1,7 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Grow, IconButton } from '@material-ui/core';
+import { ArrowBack } from '@material-ui/icons';
+import React, { useEffect, useState } from 'react';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import { UserSession } from './core/auth/auth.types';
 import MainBar from './core/main-bar/MainBar';
 import useMainStyles from './Main.styles';
@@ -12,11 +14,35 @@ type MainProps = {
 
 function Main(props: MainProps) {
   const classes = useMainStyles();
+  const [showBackButton, setShowBackButton] = useState(false);
+  const history = useHistory();
 
+  useEffect(
+    () =>
+      history.listen((location) => {
+        if (location.pathname === '/') setShowBackButton(false);
+        else setShowBackButton(true);
+      }),
+    []
+  );
+
+  // We could wrap away the back button to keep main clean.
   return (
     <main className={classes.root}>
       <MainBar user={props.userSession.user} />
       <div className={classes.content}>
+        {showBackButton && (
+          <Grow in>
+            <IconButton
+              aria-label="back"
+              onClick={history.goBack}
+              size="medium"
+              style={{ alignSelf: 'start' }}
+            >
+              <ArrowBack fontSize="inherit" />
+            </IconButton>
+          </Grow>
+        )}
         <Switch>
           <Route path="/facility-data">
             <FacilityData />
