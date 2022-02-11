@@ -5,6 +5,7 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import { UserSession } from './core/auth/auth.types';
 import MainBar from './core/main-bar/MainBar';
 import useMainStyles from './Main.styles';
+import Events from './pages/events/Events';
 import FacilityData from './pages/facility-data/FacilityData';
 import Home from './pages/home/Home';
 
@@ -14,7 +15,7 @@ type MainProps = {
 
 function Main(props: MainProps) {
   const classes = useMainStyles();
-  const [showBackButton, setShowBackButton] = useState(false);
+  const [showBackButton, setShowBackButton] = useState(true);
   const history = useHistory();
 
   useEffect(
@@ -46,6 +47,9 @@ function Main(props: MainProps) {
         <Switch>
           <Route path="/facility-data">
             <FacilityData />
+          </Route>
+          <Route path="/events">
+            <Events />
           </Route>
           <Route path="/">
             <Home />
