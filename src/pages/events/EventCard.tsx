@@ -20,12 +20,16 @@ function EventCard(props: EventCardProps) {
           </Grid>
           <Grid container item justify="flex-start">
             <Grid item sm={12}>
+              <Typography style={{ fontWeight: 'bold' }} align="left">
+                Venue:
+              </Typography>
               <Typography align="left">{props.event.venue.name}</Typography>
             </Grid>
             <Grid item sm={12}>
-              <Typography align="left">
-                Address: {props.event.venue.address}
+              <Typography style={{ fontWeight: 'bold' }} align="left">
+                Address:
               </Typography>
+              <Typography align="left">{props.event.venue.address}</Typography>
             </Grid>
           </Grid>
         </Grid>
