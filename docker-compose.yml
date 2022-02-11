@@ -2,6 +2,9 @@ version: '3.7'
 
 services:
   nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: people-house-app:latest
     container_name: people-house-app
     restart: unless-stopped
