@@ -15,17 +15,18 @@ type MainProps = {
 
 function Main(props: MainProps) {
   const classes = useMainStyles();
-  const [showBackButton, setShowBackButton] = useState(true);
+  const [showBackButton, setShowBackButton] = useState(false);
   const history = useHistory();
 
-  useEffect(
-    () =>
-      history.listen((location) => {
-        if (location.pathname === '/') setShowBackButton(false);
-        else setShowBackButton(true);
-      }),
-    []
-  );
+  useEffect(() => {
+    if (history.location.pathname === '/') setShowBackButton(false);
+    else setShowBackButton(true);
+
+    return history.listen((location) => {
+      if (location.pathname === '/') setShowBackButton(false);
+      else setShowBackButton(true);
+    });
+  }, []);
 
   // We could wrap away the back button to keep main clean.
   return (
