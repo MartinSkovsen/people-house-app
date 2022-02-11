@@ -7,9 +7,12 @@ export type Facility = {
 // This could be split up into several types matching a specific data need.
 // E.g. if we wanted to show a categorical bar chart with facility on the x axis, we wouldn't need the interval prop.
 export type FacilityDataResponse = {
-  facility: Facility;
-  consumption: number;
-  interval: DataInterval; // This could / should be generic instead to add compile time checking of the type
-}[];
+  dateInterval: DateInterval; // This could / should be (generic) type instead to add compile time checking of the type
+  data: {
+    facility: Facility;
+    consumption: number;
+    dateLabel: string;
+  }[];
+};
 
-type DataInterval = 'daily' | 'monthly' | 'yearly';
+export type DateInterval = 'Day' | 'Month' | 'Year';
