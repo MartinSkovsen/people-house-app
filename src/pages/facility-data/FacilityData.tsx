@@ -1,4 +1,5 @@
 import {
+  Grow,
   Paper,
   Table,
   TableBody,
@@ -32,28 +33,30 @@ function FacilityData() {
   return isLoading ? (
     <Skeleton />
   ) : (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Facility</TableCell>
-            <TableCell align="right">Consumption</TableCell>
-            <TableCell align="right">{facilityData.dateInterval}</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {facilityData.data.map((row) => (
-            <TableRow key={row.facility.address}>
-              <TableCell component="th" scope="row">
-                {row.facility.address}
-              </TableCell>
-              <TableCell align="right">{row.consumption}</TableCell>
-              <TableCell align="right">{row.dateLabel}</TableCell>
+    <Grow in timeout={750}>
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Facility</TableCell>
+              <TableCell align="right">Consumption</TableCell>
+              <TableCell align="right">{facilityData.dateInterval}</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {facilityData.data.map((row) => (
+              <TableRow key={row.facility.address}>
+                <TableCell component="th" scope="row">
+                  {row.facility.address}
+                </TableCell>
+                <TableCell align="right">{row.consumption}</TableCell>
+                <TableCell align="right">{row.dateLabel}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Grow>
   );
 }
 
