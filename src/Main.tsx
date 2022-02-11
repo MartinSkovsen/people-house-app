@@ -7,6 +7,7 @@ import MainBar from './core/main-bar/MainBar';
 import useMainStyles from './Main.styles';
 import FacilityData from './pages/facility-data/FacilityData';
 import Home from './pages/home/Home';
+import Events from "./pages/events/Events";
 
 type MainProps = {
   userSession: UserSession;
@@ -48,7 +49,7 @@ function Main(props: MainProps) {
             <FacilityData />
           </Route>
           <Route path="/events">
-            <FacilityData />
+            <Events />
           </Route>
           <Route path="/">
             <Home />
