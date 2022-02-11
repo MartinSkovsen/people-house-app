@@ -8,7 +8,6 @@ const useMainBarStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       minHeight: '8.125rem',
       margin: '0px auto',
-      padding: '0px 1.875rem',
       width: '100%',
     },
   })
