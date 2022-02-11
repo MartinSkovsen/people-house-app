@@ -27,7 +27,7 @@ function Home() {
         <HomeAction
           img={facilityData}
           onHomeActionClicked={() => redirect('facility-data')}
-          title="Data"
+          title="Facility Data"
           width={homeActionWidth}
         />
       </Grid>
