@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  nginx:
+    image: people-house-app:latest
+    container_name: people-house-app
+    restart: unless-stopped
+    ports:
+      - 80:80
