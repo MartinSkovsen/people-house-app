@@ -6,6 +6,10 @@ const useEventCardStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.background.default,
       minHeight: '12rem',
       width: '100%',
+      '&:hover': {
+        boxShadow: theme.shadows[10],
+      },
+      cursor: 'pointer',
     },
   })
 );
