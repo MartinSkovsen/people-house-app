@@ -12,7 +12,7 @@ function EventCard(props: EventCardProps) {
   return (
     <Grow in timeout={1000}>
       <Paper className={classes.root} elevation={1} square>
-        <Grid style={{ padding: 8 }} container justify="center" spacing={2}>
+        <Grid style={{ padding: 8 }} container justify="center">
           <Grid item sm={12}>
             <Typography align="center" variant="h5">
               {props.event.name}
